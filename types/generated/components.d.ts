@@ -117,6 +117,28 @@ export interface SharedMedia extends Schema.Component {
   };
 }
 
+export interface SharedMultipleContentCards extends Schema.Component {
+  collectionName: 'components_shared_multiple_content_cards';
+  info: {
+    displayName: 'MultipleContentCards';
+    icon: 'bulletList';
+  };
+  attributes: {
+    items: Attribute.Component<'shared.content-card', true>;
+  };
+}
+
+export interface SharedMultipleFeatures extends Schema.Component {
+  collectionName: 'components_shared_multiple_features';
+  info: {
+    displayName: 'MultipleFeatures';
+    icon: 'bulletList';
+  };
+  attributes: {
+    items: Attribute.Component<'shared.featured', true>;
+  };
+}
+
 export interface SharedQuote extends Schema.Component {
   collectionName: 'components_shared_quotes';
   info: {
@@ -192,6 +214,8 @@ declare module '@strapi/types' {
       'shared.link': SharedLink;
       'shared.logo-banner': SharedLogoBanner;
       'shared.media': SharedMedia;
+      'shared.multiple-content-cards': SharedMultipleContentCards;
+      'shared.multiple-features': SharedMultipleFeatures;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
       'shared.section-text': SharedSectionText;

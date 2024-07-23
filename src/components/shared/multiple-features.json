@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_shared_multiple_features",
+  "info": {
+    "displayName": "MultipleFeatures",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.featured"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_shared_multiple_content_cards",
+  "info": {
+    "displayName": "MultipleContentCards",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.content-card"
+    }
+  }
+}

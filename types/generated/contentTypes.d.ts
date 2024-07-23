@@ -1035,12 +1035,12 @@ export interface ApiHomeHome extends Schema.SingleType {
     blocks: Attribute.DynamicZone<
       [
         'shared.contact-form',
-        'shared.content-card',
         'shared.featured-success-story',
-        'shared.featured',
         'shared.hero',
         'shared.link',
-        'shared.logo-banner'
+        'shared.logo-banner',
+        'shared.multiple-content-cards',
+        'shared.multiple-features'
       ]
     >;
     createdAt: Attribute.DateTime;
