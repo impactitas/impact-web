@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_shared_featured_success_stories",
+  "info": {
+    "displayName": "Featured Success Story",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "shortDescription": {
+      "type": "text",
+      "required": true
+    },
+    "stories": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.content-card",
+      "required": true
+    }
+  }
+}

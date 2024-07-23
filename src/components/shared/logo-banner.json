@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_logo_banners",
+  "info": {
+    "displayName": "Logo Banner",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "logos": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
+    }
+  }
+}

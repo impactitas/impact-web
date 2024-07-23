@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "blogs",
+  "info": {
+    "singularName": "blog",
+    "pluralName": "blogs",
+    "displayName": "Blog",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "author": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::author.author"
+    },
+    "blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.contact-form",
+        "shared.content-card",
+        "shared.featured-success-story",
+        "shared.featured",
+        "shared.hero",
+        "shared.link",
+        "shared.logo-banner",
+        "shared.media"
+      ]
+    }
+  }
+}

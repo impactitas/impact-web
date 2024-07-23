@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_shared_section_texts",
+  "info": {
+    "displayName": "sectionText",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "shortDescription": {
+      "type": "text"
+    }
+  }
+}

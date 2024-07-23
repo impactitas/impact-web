@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_shared_links",
+  "info": {
+    "displayName": "Link",
+    "icon": "cursor"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string",
+      "required": true
+    },
+    "variant": {
+      "type": "enumeration",
+      "enum": [
+        "primary",
+        "secondary"
+      ]
+    },
+    "path": {
+      "type": "string",
+      "required": true
+    },
+    "as": {
+      "type": "enumeration",
+      "enum": [
+        "link",
+        "button"
+      ],
+      "default": "link"
+    }
+  }
+}
