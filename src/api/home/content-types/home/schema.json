@@ -26,7 +26,9 @@
         "shared.link",
         "shared.logo-banner",
         "shared.multiple-content-cards",
-        "shared.multiple-features"
+        "shared.multiple-features",
+        "shared.section-text",
+        "shared.article-list"
       ]
     }
   }

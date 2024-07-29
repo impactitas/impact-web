@@ -1,5 +1,36 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface SharedArticleList extends Schema.Component {
+  collectionName: 'components_shared_article_lists';
+  info: {
+    displayName: 'ArticleList';
+    icon: 'apps';
+  };
+  attributes: {
+    items: Attribute.Component<'shared.article', true>;
+  };
+}
+
+export interface SharedArticle extends Schema.Component {
+  collectionName: 'components_shared_articles';
+  info: {
+    displayName: 'article';
+    icon: 'apps';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    shortDescription: Attribute.Text;
+    author: Attribute.Relation<
+      'shared.article',
+      'oneToOne',
+      'api::author.author'
+    >;
+    image: Attribute.Media & Attribute.Required;
+    path: Attribute.String & Attribute.Required;
+  };
+}
+
 export interface SharedButton extends Schema.Component {
   collectionName: 'components_shared_buttons';
   info: {
@@ -33,11 +64,13 @@ export interface SharedContentCard extends Schema.Component {
   info: {
     displayName: 'Content Card';
     icon: 'archive';
+    description: '';
   };
   attributes: {
     title: Attribute.String & Attribute.Required;
     shortDescription: Attribute.Text & Attribute.Required;
     icon: Attribute.Media & Attribute.Required;
+    action: Attribute.Component<'shared.link'>;
   };
 }
 
@@ -46,12 +79,14 @@ export interface SharedFeaturedSuccessStory extends Schema.Component {
   info: {
     displayName: 'Featured Success Story';
     icon: 'bulletList';
+    description: '';
   };
   attributes: {
     title: Attribute.String & Attribute.Required;
     shortDescription: Attribute.Text & Attribute.Required;
     stories: Attribute.Component<'shared.content-card', true> &
       Attribute.Required;
+    action: Attribute.Component<'shared.link'>;
   };
 }
 
@@ -60,11 +95,13 @@ export interface SharedFeatured extends Schema.Component {
   info: {
     displayName: 'Featured';
     icon: 'apps';
+    description: '';
   };
   attributes: {
     title: Attribute.String & Attribute.Required;
     shortDescription: Attribute.Text & Attribute.Required;
     image: Attribute.Media & Attribute.Required;
+    action: Attribute.Component<'shared.link'>;
   };
 }
 
@@ -73,11 +110,13 @@ export interface SharedHero extends Schema.Component {
   info: {
     displayName: 'Hero';
     icon: 'book';
+    description: '';
   };
   attributes: {
     title: Attribute.String & Attribute.Required;
     shortDescription: Attribute.Text & Attribute.Required;
     image: Attribute.Media & Attribute.Required;
+    actions: Attribute.Component<'shared.link', true>;
   };
 }
 
@@ -133,6 +172,7 @@ export interface SharedMultipleFeatures extends Schema.Component {
   info: {
     displayName: 'MultipleFeatures';
     icon: 'bulletList';
+    description: '';
   };
   attributes: {
     items: Attribute.Component<'shared.featured', true>;
@@ -205,6 +245,8 @@ export interface SharedSlider extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'shared.article-list': SharedArticleList;
+      'shared.article': SharedArticle;
       'shared.button': SharedButton;
       'shared.contact-form': SharedContactForm;
       'shared.content-card': SharedContentCard;

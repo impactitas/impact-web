@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_shared_article_lists",
+  "info": {
+    "displayName": "ArticleList",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.article"
+    }
+  }
+}

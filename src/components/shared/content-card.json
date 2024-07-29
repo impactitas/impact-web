@@ -2,7 +2,8 @@
   "collectionName": "components_shared_content_cards",
   "info": {
     "displayName": "Content Card",
-    "icon": "archive"
+    "icon": "archive",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -15,12 +16,17 @@
       "required": true
     },
     "icon": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "action": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.link"
     }
   }
 }

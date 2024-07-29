@@ -1,8 +1,8 @@
 {
-  "collectionName": "components_shared_heroes",
+  "collectionName": "components_shared_articles",
   "info": {
-    "displayName": "Hero",
-    "icon": "book",
+    "displayName": "article",
+    "icon": "apps",
     "description": ""
   },
   "options": {},
@@ -12,8 +12,12 @@
       "required": true
     },
     "shortDescription": {
-      "type": "text",
-      "required": true
+      "type": "text"
+    },
+    "author": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::author.author"
     },
     "image": {
       "type": "media",
@@ -23,10 +27,9 @@
         "images"
       ]
     },
-    "actions": {
-      "type": "component",
-      "repeatable": true,
-      "component": "shared.link"
+    "path": {
+      "type": "string",
+      "required": true
     }
   }
 }
