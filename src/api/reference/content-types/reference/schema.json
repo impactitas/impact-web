@@ -16,6 +16,40 @@
       "type": "component",
       "repeatable": false,
       "component": "shared.seo"
+    },
+    "blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.article-list",
+        "shared.contact-form",
+        "shared.hero",
+        "shared.logo-banner",
+        "shared.link",
+        "shared.multiple-content-cards",
+        "shared.multiple-features",
+        "shared.section-text",
+        "shared.image-viewer",
+        "shared.paragraph",
+        "shared.title"
+      ]
+    },
+    "slug": {
+      "type": "uid"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "shortDescription": {
+      "type": "text"
+    },
+    "icon": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
     }
   }
 }

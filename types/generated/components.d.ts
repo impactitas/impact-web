@@ -120,6 +120,17 @@ export interface SharedHero extends Schema.Component {
   };
 }
 
+export interface SharedImageViewer extends Schema.Component {
+  collectionName: 'components_shared_image_viewers';
+  info: {
+    displayName: 'ImageViewer';
+    icon: 'crop';
+  };
+  attributes: {
+    image: Attribute.Media & Attribute.Required;
+  };
+}
+
 export interface SharedLink extends Schema.Component {
   collectionName: 'components_shared_links';
   info: {
@@ -177,6 +188,17 @@ export interface SharedMultipleFeatures extends Schema.Component {
   };
   attributes: {
     items: Attribute.Component<'shared.featured', true>;
+  };
+}
+
+export interface SharedParagraph extends Schema.Component {
+  collectionName: 'components_shared_paragraphs';
+  info: {
+    displayName: 'paragraph';
+    icon: 'bulletList';
+  };
+  attributes: {
+    text: Attribute.Text & Attribute.Required;
   };
 }
 
@@ -243,6 +265,17 @@ export interface SharedSlider extends Schema.Component {
   };
 }
 
+export interface SharedTitle extends Schema.Component {
+  collectionName: 'components_shared_titles';
+  info: {
+    displayName: 'Title';
+    icon: 'bulletList';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
@@ -254,16 +287,19 @@ declare module '@strapi/types' {
       'shared.featured-success-story': SharedFeaturedSuccessStory;
       'shared.featured': SharedFeatured;
       'shared.hero': SharedHero;
+      'shared.image-viewer': SharedImageViewer;
       'shared.link': SharedLink;
       'shared.logo-banner': SharedLogoBanner;
       'shared.media': SharedMedia;
       'shared.multiple-content-cards': SharedMultipleContentCards;
       'shared.multiple-features': SharedMultipleFeatures;
+      'shared.paragraph': SharedParagraph;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
       'shared.section-text': SharedSectionText;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
+      'shared.title': SharedTitle;
     }
   }
 }

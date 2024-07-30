@@ -986,6 +986,36 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   };
 }
 
+export interface ApiContactUsContactUs extends Schema.SingleType {
+  collectionName: 'contact_uses';
+  info: {
+    singularName: 'contact-us';
+    pluralName: 'contact-uses';
+    displayName: 'Contact Us';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contactForm: Attribute.Component<'shared.contact-form'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::contact-us.contact-us',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::contact-us.contact-us',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiGlobalGlobal extends Schema.SingleType {
   collectionName: 'globals';
   info: {
@@ -1099,6 +1129,25 @@ export interface ApiReferenceReference extends Schema.CollectionType {
   };
   attributes: {
     seo: Attribute.Component<'shared.seo'>;
+    blocks: Attribute.DynamicZone<
+      [
+        'shared.article-list',
+        'shared.contact-form',
+        'shared.hero',
+        'shared.logo-banner',
+        'shared.link',
+        'shared.multiple-content-cards',
+        'shared.multiple-features',
+        'shared.section-text',
+        'shared.image-viewer',
+        'shared.paragraph',
+        'shared.title'
+      ]
+    >;
+    slug: Attribute.UID;
+    title: Attribute.String & Attribute.Required;
+    shortDescription: Attribute.Text;
+    icon: Attribute.Media & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1110,6 +1159,39 @@ export interface ApiReferenceReference extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::reference.reference',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSuccessStorySuccessStory extends Schema.SingleType {
+  collectionName: 'success_stories';
+  info: {
+    singularName: 'success-story';
+    pluralName: 'success-stories';
+    displayName: 'Success Story';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    shortDescription: Attribute.Text;
+    contactForm: Attribute.Component<'shared.contact-form'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::success-story.success-story',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::success-story.success-story',
       'oneToOne',
       'admin::user'
     > &
@@ -1140,10 +1222,12 @@ declare module '@strapi/types' {
       'api::author.author': ApiAuthorAuthor;
       'api::blog.blog': ApiBlogBlog;
       'api::category.category': ApiCategoryCategory;
+      'api::contact-us.contact-us': ApiContactUsContactUs;
       'api::global.global': ApiGlobalGlobal;
       'api::home.home': ApiHomeHome;
       'api::main-menu.main-menu': ApiMainMenuMainMenu;
       'api::reference.reference': ApiReferenceReference;
+      'api::success-story.success-story': ApiSuccessStorySuccessStory;
     }
   }
 }
