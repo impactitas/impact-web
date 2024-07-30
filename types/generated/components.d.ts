@@ -125,10 +125,11 @@ export interface SharedLink extends Schema.Component {
   info: {
     displayName: 'Link';
     icon: 'cursor';
+    description: '';
   };
   attributes: {
     text: Attribute.String & Attribute.Required;
-    variant: Attribute.Enumeration<['primary', 'secondary']>;
+    variant: Attribute.Enumeration<['primary', 'secondary', 'tertiary']>;
     path: Attribute.String & Attribute.Required;
     as: Attribute.Enumeration<['link', 'button']> & Attribute.DefaultTo<'link'>;
   };
